@@ -102,6 +102,31 @@ Se crea un ECS Service (app-service) con:
 Se ejecuta en AWS Fargate (sin necesidad de administrar servidores).
 Se conecta a la subnet pública y usa un Security Group.
 
+
+1️⃣ Inicializar el entorno dentro de la carpeta Terraform
+
+🔹 terraform init
+Descarga los proveedores necesarios de AWS.
+Inicializa el backend para almacenar el estado de Terraform.
+Prepara el entorno de trabajo
+
+2️⃣ Planificar los cambios
+
+🔹 terraform plan
+
+Analiza la infraestructura actual y compara con la configuración en los archivos .tf.
+Muestra un resumen de los cambios que se aplicarán (sin ejecutarlos).
+Permite validar si la configuración tiene errores.
+
+3️⃣ Aplicar los cambios
+
+🔹 terraform apply
+
+Aplica los cambios descritos en el terraform plan.
+Crea, actualiza o elimina recursos en la infraestructura real.
+Pide confirmación antes de ejecutar.
+
+
 ![Captura de pantalla 2025-02-09 a la(s) 3 31 11 p m](https://github.com/user-attachments/assets/1bbbb763-c0e4-40ea-a33d-5d8ff288316b)
 
 ![Captura de pantalla 2025-02-09 a la(s) 3 40 15 p m](https://github.com/user-attachments/assets/b2d3862c-868d-4c7c-8a94-ccad70bb9956)
