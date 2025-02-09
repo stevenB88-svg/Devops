@@ -4,9 +4,5 @@ WORKDIR /app
 
 COPY package*.json ./
 RUN npm install
-
-COPY . . 
-
-EXPOSE 3000  
-
-CMD ["node", "index.js"]  # Usa la sintaxis correcta para CMD
+COPY .. ./
+CMD node index.js
