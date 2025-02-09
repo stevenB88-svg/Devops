@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      
+         
 env:
   AWS_REGION: us-east-1
   ECS_CLUSTER: app_cluster
@@ -23,18 +23,21 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: "AKIAU72LF2QBG3T4UMSQ"
+          aws-secret-access-key: "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"
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: Login to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v1
-
+      # - name: Login to Amazon ECR
+      #   id: login-ecr
+      #   uses: aws-actions/amazon-ecr-login@v1
+      - name: Iniciar sesión en Amazon ECR
+        run: |
+          aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin 343218181122.dkr.ecr.us-east-1.amazonaws.com
+      
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
         env:
-          ECR_REGISTRY: "343218181122.dkr.ecr.us-east-1.amazonaws.com/app_repo"
+          ECR_REGISTRY: "343218181122.dkr.ecr.us-east-1.amazonaws.com"
           ECR_REPOSITORY: "app_repo"
           IMAGE_TAG: latest
         run: |
