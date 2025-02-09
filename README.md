@@ -110,5 +110,25 @@ Se conecta a la subnet pública y usa un Security Group.
 ![Captura de pantalla 2025-02-09 a la(s) 3 41 39 p m](https://github.com/user-attachments/assets/eec15dd9-db79-4a43-8b67-65f16107e9a2)
 
 
+🔹 Mejoras Futuras
+🔒 Configurar HTTPS con un Application Load Balancer (ALB)
 
+Implementar un ALB con un certificado SSL de AWS Certificate Manager (ACM) para exponer el servicio de manera segura.
+Redirigir tráfico HTTP a HTTPS automáticamente.
+🛡 Agregar un Stage de Seguridad en el Pipeline
+
+Integrar herramientas como Trivy o Snyk para escanear imágenes Docker en busca de vulnerabilidades.
+Configurar AWS IAM Roles con permisos mínimos para evitar accesos innecesarios.
+Habilitar AWS WAF para proteger la aplicación contra ataques comunes como SQL Injection y XSS.
+🚀 Autoescalado de Tareas ECS
+
+Configurar Auto Scaling para aumentar/reducir tareas en función de la carga de CPU o memoria.
+Usar métricas de Amazon CloudWatch para activar reglas de escalado dinámico.
+📦 Uso de Amazon Elastic Container Registry (ECR)
+
+Mover las imágenes Docker a AWS ECR para mayor seguridad y mejor gestión de versiones.
+📜 Logs y Monitoreo Mejorado
+
+Enviar logs de ECS a AWS CloudWatch Logs con filtros para alertas en caso de errores críticos.
+Implementar AWS X-Ray para trazabilidad y análisis de rendimiento.
 
