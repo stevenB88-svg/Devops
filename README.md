@@ -1,39 +1,55 @@
 # Devops
 
 📦 tu-repo
-├── 📂 .github
-│   ├── 📂 workflows
-│   │   ├── deploy.yml            # GitHub Actions para CI/CD
-│   │   ├── td.json               # Definición de la tarea ECS
-├── 📂 app                         # Código de la aplicación (Node.js)
-│   ├── .dockerignore              # Archivos ignorados en Docker
-│   ├── .gitignore                 # Archivos ignorados en Git
-│   ├── Dockerfile                 # Imagen Docker de la aplicación
-│   ├── index.js                   # Código principal de la aplicación
-│   ├── package.json               # Dependencias y configuración del proyecto Node.js
-│   ├── package-lock.json          # Bloqueo de versiones de dependencias
-├── 📂 terraform                    # Infraestructura como código (IaC)
-│   ├── config.tf                   # Configuración del backend y provider de Terraform
-│   ├── vpc.tf                      # Configuración de la red VPC, subnets y security groups
-│   ├── repository.tf                # Creación del repositorio en Amazon ECR
-│   ├── ecs.tf                      # Configuración del Cluster ECS, Service y Task Definition
-├── README.md                       # Documentación del proyecto
+
+ 📂 .github
+  📂 workflows
+  
+      deploy.yml            # GitHub Actions para CI/CD
+      td.json               # Definición de la tarea ECS
+📂 app                         
+
+    Dockerfile                 # Imagen Docker de la aplicación
+    index.js                   # Código principal de la aplicación
+    package.json               # Dependencias y configuración del proyecto Node.js
+    package-lock.json          # Bloqueo de versiones de dependencias
+    
+📂 terraform  
+
+      config.tf                   # Configuración del backend y provider de Terraform
+      vpc.tf                      # Configuración de la red VPC, subnets y security groups
+      repository.tf                # Creación del repositorio en Amazon ECR
+      ecs.tf                      # Configuración del Cluster ECS, Service y Task Definition
+      README.md                       # Documentación del proyecto
+
+
+
 
 
 1️⃣ Crear Dockerfile con Node.js.
+
 2️⃣ Construir la imagen: docker build -t mi-app-node .
-3️⃣ Ejecutar el contenedor: docker run -d -p 3000:3000 --name mi-app-container mi-app-node
+
+3️⃣ Ejecutar el contenedor: docker run -d -p 3000:3000  mi-app-node
+
 4️⃣ Verificar que funciona con docker ps 
+
 5️⃣ Acceder al contenedor con docker exec -it mi-app-container sh
+
 6️⃣ Detener y eliminar con docker stop mi-app-container && docker rm mi-app-container
 
 
 
 📂 workflows
+
 ✅ Se ejecuta cuando hay un push a la rama main.
+
 ✅ Configura AWS y se autentica en Amazon Elastic Container Registry (ECR).
+
 ✅ Construye, etiqueta y sube la imagen Docker al repositorio de ECR.
+
 ✅ Actualiza la tarea de ECS con la nueva imagen.
+
 ✅ Despliega la aplicación en Amazon ECS.
 
 📂 app 
@@ -87,5 +103,12 @@ Se ejecuta en AWS Fargate (sin necesidad de administrar servidores).
 Se conecta a la subnet pública y usa un Security Group.
 
 ![Captura de pantalla 2025-02-09 a la(s) 3 31 11 p m](https://github.com/user-attachments/assets/1bbbb763-c0e4-40ea-a33d-5d8ff288316b)
+
+![Captura de pantalla 2025-02-09 a la(s) 3 40 15 p m](https://github.com/user-attachments/assets/b2d3862c-868d-4c7c-8a94-ccad70bb9956)
+
+
+![Captura de pantalla 2025-02-09 a la(s) 3 41 39 p m](https://github.com/user-attachments/assets/eec15dd9-db79-4a43-8b67-65f16107e9a2)
+
+
 
 
