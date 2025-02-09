@@ -109,6 +109,10 @@ Se conecta a la subnet pública y usa un Security Group.
 
 ![Captura de pantalla 2025-02-09 a la(s) 3 41 39 p m](https://github.com/user-attachments/assets/eec15dd9-db79-4a43-8b67-65f16107e9a2)
 
+![Captura de pantalla 2025-02-09 a la(s) 3 45 28 p m](https://github.com/user-attachments/assets/19309e9f-f71c-4b33-a755-f6bbed9f0f81)
+
+
+
 
 🔹 Mejoras Futuras
 🔒 Configurar HTTPS con un Application Load Balancer (ALB)
